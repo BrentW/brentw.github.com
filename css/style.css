@@ -1,0 +1,11 @@
+#title {
+  height: 100px;
+}
+
+#title h1 {
+  font-size: 3em;
+}
+
+#title span {
+  font-style: italic;
+}
