@@ -16,17 +16,31 @@
     <a href="/"><h1>Brent W<span>- level 3 rails blog</span></h1></a>
   </div>
   
-  {{ content }}
-  
-  <div id="footer">
-    <div id="contact">
-      <p>
-        Brent Wooden<br />
-        <a href="mailto:brent.wooden@gmail.com">brent.wooden@gmail.com</a><br />
-	<a href="http://twitter.com/mogis">twitter.com/mogis</a>
-      </p>
-    </div>
-  </div>
+  <table id="content_wrapper">
+    <tr>
+      <td id="content_cell">
+        {{ content }}
+      <td>
+      <td id="info_cells">
+        Brent Wooden
+
+        <ul id="contact">
+          <li>
+            <a href="mailto:brent.wooden@gmail.com">brent.wooden@gmail.com</a>
+          </li>
+          <li>
+            <a href="http://twitter.com/mogis">twitter.com/mogis</a>
+          </li>
+          <li>
+            <a href="http://www.workingwithrails.com/person/14703-brent-wooden">working with rails</a>
+          </li>
+          <li>
+            <a href="http://www.linkedin.com/in/brentwooden">linkedin</a>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
 </div>
 
 </body>
