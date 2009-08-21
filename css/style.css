@@ -1,11 +1,30 @@
+html, body, h1 {
+  margin: 0;
+  padding 0;
+}
+
+h1 {
+  padding: 10px 0 40px 30px;
+}
+
+a, a:visited {
+  color: black;
+}
+
+#title a {
+  text-decoration: none;
+}
+
 #title {
-  height: 100px;
+  height: 86px;
+  background-color: blue;
 }
 
 #title h1 {
   font-size: 3em;
 }
 
-#title span {
+#title h1 span {
   font-style: italic;
+  font-size: .5em;
 }
