@@ -65,11 +65,13 @@ a, a:visited {
 #content_wrapper {
   position: relative;
   top: -80px;
+  width: 100%;
 }
 
 #info_cells {
   vertical-align: top;
   font-weight: bold;
+  width: 100px;
 }
 
 #info_cells ul {
