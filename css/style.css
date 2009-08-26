@@ -101,7 +101,7 @@ a, a:visited {
   margin-right: auto;
   position: relative;
   top: -94px;
-
+  z-index: 5;
 }
 
 #text_title {
@@ -119,6 +119,19 @@ a, a:visited {
 
 }
 
+#title_drop_shadow {
+  opacity: 0.5;
+  background-color: black;
+  height: 147px;
+  width: 782px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: -233px;
+  right: -8px;
+  z-index: 0;
+}
+
 #post_title {
   color: #658f9b;
 }
@@ -133,7 +146,7 @@ a:hover {
 
 #content_wrapper {
   position: relative;
-  top: -80px;
+  top: -190px;
   width: 100%;
 }
 
