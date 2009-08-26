@@ -29,7 +29,7 @@ object.rb
     end
   end
 {% endhighlight %}
-{% endhighlight %}
+
 Yes, we're adding a method to all objects; however, 
 "@controller.class == ApplicationController" ensures it's being called 
 on the console main object.
