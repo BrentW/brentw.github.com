@@ -1,4 +1,4 @@
-html, body, h1, table, td, tr {
+chtml, body, h1, table, td, tr {
   margin: 0;
   padding: 0;
 }
@@ -9,6 +9,7 @@ body {
 
 #wrapper {
   width: 70%;
+  height: 100%;
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
@@ -21,7 +22,7 @@ body {
 }
 
 h1 {
-  margin: 30px 0 36px 10px;
+  margin: 0;
   height: 129px;
   font-size: 2.4em;
 
@@ -41,7 +42,8 @@ a, a:visited {
 
 #title a {
   text-decoration: none;
-  color: white;
+  color: #ddd;
+  font-family: helvetica;
 }
 
 #title h1 span {
@@ -52,7 +54,6 @@ a, a:visited {
 #title {
   border: 1px solid #222;
   background-image: url('../images/quarry3.jpg');
-  background-position: center top;
   background-repeat: no-repeat;
   height: 147px;
   width: 782px;
@@ -60,6 +61,20 @@ a, a:visited {
   margin-right: auto;
   position: relative;
   top: -94px;
+}
+
+#text_title {
+  background-color: black;
+  width: 240px;
+  height: 121px;
+  padding: 6px;
+  padding-top: 18px;
+  border: 1px solid #658f9b;
+  border-right: 0;
+}
+
+#text_title div {
+  
 }
 
 #content_wrapper {
@@ -78,4 +93,5 @@ a, a:visited {
   padding-left: 8px;
   list-style-type: none;
   margin-top: 6px;
+  color: #658f9b;
 }
