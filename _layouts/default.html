@@ -1,64 +1,69 @@
 ---
-
+  blog_name: Rails Code Quarry
 ---
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
-<head>
-   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-   <title>{{ page.title }}</title>
-   <meta name="author" content="Brent W" />
+  <head>
+     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+     <title> {{ page.blog_name }} - {{ page.title }}</title>
+     <meta name="author" content="Brent W" />
+     <meta name="description" content="{{ page.description }}" />
+     <link rel="stylesheet" href="/css/style.css" type="text/css" />
+  </head>
+  <body>
+    <a id="brentw_github_link" alt="brentw on github" href="http://github.com/brentw">
+      <img alt="fork me on github" src="/images/fork-me-on-github.png" />
+    </a>
+    <div id="outside_wrapper">
+      <div id="inside_wrapper">      
+        <div id="title">
+          <div id="text_title">
+            <div>
+              <a href="/"><h1>Code Quarry<span><br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- level 3 rails blog</span></h1></a>
+            </div>
+          </div>
+          <a href="http://brentw.github.com/atom.xml">
+            <img id="rss_logo" src="http://brentw.github.com/images/rss.png">
+          </a>
+          <div class="clear"></div>
+        </div>
+        <div id="height_wrapper">
+          <div id="height_buffer">
+          </div>    
 
-   <link rel="stylesheet" href="/css/style.css" type="text/css" />
-</head>
-<body>
-  <div id="wrapper">
-    
-    <div id="title">
-      <div id="text_title">
-        <div>
-          <a href="/"><h1>Code Quarry<span><br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- level 3 rails blog</span></h1></a>
+          <table id="content_wrapper">
+            <tr>
+              <td id="content_cell">
+                {{ content }}
+              <td>
+              <td id="info_cells">
+                <div id="info_separator">
+                </div>
+                Brent Wooden
+
+                <ul id="contact">
+                  <li>
+                    <a href="mailto:brent.wooden@gmail.com">brent.wooden@gmail.com</a>
+                  </li>
+                  <li>
+                    <a href="http://twitter.com/mogis">twitter.com/mogis</a>
+                  </li>
+                  <li>
+                    <a href="http://www.workingwithrails.com/person/14703-brent-wooden">working with rails</a>
+                  </li>
+                  <li>
+                    <a href="http://www.linkedin.com/in/brentwooden">linkedin</a>
+                  </li>
+                  <li><br />
+                    Bloomington, Indiana
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </table>
+          <div class="clear"></div>
         </div>
       </div>
-      <a href="http://brentw.github.com/atom.xml">
-        <img id="rss_logo" src="http://brentw.github.com/images/rss.png">
-      </a>
-      <div class="clear"></div>
     </div>
-    <div id="height_wrapper">
-      <div id="height_buffer">
-      </div>    
-
-      <table id="content_wrapper">
-        <tr>
-          <td id="content_cell">
-            {{ content }}
-          <td>
-          <td id="info_cells">
-            Brent Wooden
-
-            <ul id="contact">
-              <li>
-                <a href="mailto:brent.wooden@gmail.com">brent.wooden@gmail.com</a>
-              </li>
-              <li>
-                <a href="http://twitter.com/mogis">twitter.com/mogis</a>
-              </li>
-              <li>
-                <a href="http://www.workingwithrails.com/person/14703-brent-wooden">working with rails</a>
-              </li>
-              <li>
-                <a href="http://www.linkedin.com/in/brentwooden">linkedin</a>
-              </li>
-              <li><br />
-                Bloomington, Indiana
-              </li>
-            </ul>
-          </td>
-        </tr>
-      </table>
-      <div class="clear"></div>
-    </div>
-  </div>
-</div>
-</body>
+  </body>
 </html>
 

@@ -1,9 +1,15 @@
 ---
 layout: default
-title: test title
+title: Level 3 Ruby on Rails Blog
+description: Intermediate Level Ruby on Rails Tutorials and Tirades.
 ---
 {% for post in site.posts %}
-  <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-  {{ post.content }}
-  <em>Posted on {{ post.date | date_to_long_string }}.</em>
+  <h2 class="post_fragment_title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+  <div class="post_fragment">
+    <div class="post_fragment_content">
+      {{ post.post_description }}
+    </div>
+
+    <em>Posted on {{ post.date | date_to_long_string }}.</em>
+  </div>
 {% endfor %}

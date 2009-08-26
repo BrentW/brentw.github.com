@@ -1,11 +1,24 @@
+* {
+  font-family: helvetica;
+}
+
 html, body, h1, table, td, tr, img {
   margin: 0;
   padding: 0;
 }
 
+#brentw_github_link {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 #rss_logo {
   margin: 6px; 
   float: right;
+}
+
+img {
   border: none;
 }
 
@@ -13,15 +26,22 @@ body {
   background-color: #2a2a2a;
 }
 
-#wrapper {
+#inside_wrapper {
+  background-color: white;
+  padding: 10px;
+  margin-left: 6px;
+  margin-right: 6px;
+  border-left: 1px solid #555;
+  border-right: 1px solid #555;
+}
+
+#outside_wrapper {
+  border: 1px solid black;
   width: 70%;
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
-  background-color: white;
-  padding: 10px;
-  border-left: 6px solid #658f9b;  
-  border-right: 6px solid #658f9b;
+  background-color: #658f9b;
   position: relative;
   top: 94px;
 }
@@ -44,6 +64,10 @@ h1 {
 
 }
 
+h2.post_fragment_title {
+  margin-bottom: 12px;
+}
+
 a, a:visited {
   color: #658f9b;
 }
@@ -58,7 +82,7 @@ a, a:visited {
 
 #title a {
   text-decoration: none;
-  color: #ddd;
+  color: #eee;
   font-family: helvetica;
 }
 
@@ -99,16 +123,34 @@ a, a:visited {
   color: #658f9b;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 #content_wrapper {
   position: relative;
   top: -80px;
   width: 100%;
 }
 
+#info_separator {
+  height: 154px;
+  width: 3px;
+  margin-right: 6px;
+  background-color: #eee;
+  float: left;
+}
+
 #info_cells {
   vertical-align: top;
   font-weight: bold;
-  width: 100px;
+  width: 260px;
+  padding-top: 20px;
+  padding-left: 10px;
 }
 
 #info_cells ul {
@@ -116,4 +158,32 @@ a, a:visited {
   list-style-type: none;
   margin-top: 6px;
   color: #658f9b;
+}
+
+#contact {
+  margin-left: 12px;
+  font-size: .98em;
+}
+
+.post_fragment {
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.post_fragment em {
+  position: relative;
+  display: block;
+  text-align: right;
+  margin-right: 6px;
+  font-size: .8em;
+  border-top: 1px solid #eee;
+}
+
+.post_fragment_content {
+  margin-bottom: 20px;
+}
+
+#post {
+  margin-left: 20px;
+  margin-right: 10px;
 }
