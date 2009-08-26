@@ -11,6 +11,7 @@
      <link rel="stylesheet" href="/css/syntax.css" type="text/css" />
   </head>
   <body>
+  
     <a id="brentw_github_link" alt="brentw on github" href="http://github.com/brentw">
       <img alt="fork me on github" src="/images/fork-me-on-github.png" />
     </a>
@@ -76,7 +77,20 @@
 
       </div>
     </div>
-
+    <script type="text/javascript">
+      //<![CDATA[
+      (function() {
+        var links = document.getElementsByTagName('a');
+        var query = '?';
+        for(var i = 0; i < links.length; i++) {
+        if(links[i].href.indexOf('#disqus_thread') >= 0) {
+	        query += 'url' + i + '=' + encodeURIComponent(links[i].href) + '&';
+        }
+        }
+        document.write('<script charset="utf-8" type="text/javascript" src="http://disqus.com/forums/railscodequarry/get_num_replies.js' + query + '"></' + 'script>');
+      })();
+      //]]>
+    </script>
   </body>
 </html>
 
