@@ -12,9 +12,8 @@ Using method missing, I'm going to make typing super_long_namesky
 return its user.
 
 All code in the directory /config/initializers is run when rails starts, so
-make a new file there.
+make a new file there. /config/initializers/object.rb
 
-object.rb
 {% highlight ruby %}
   class Object
     def method_missing(*args)
