@@ -41,7 +41,7 @@ is called outside of console, it returns the correct no method error.
 {% highlight irb %}
 
   >> super_long_namesky
-  => #<User id: 2000297, salted_password: "f3a7bc8b43bfaa054b17250bb0256178", 
+  => #<Character id: 2000297, salted_password: "f3a7bc8b43bfaa054b17250bb0256178", 
   email: "ernie_muppet@example.com", name: 'super_long_namesky', created_at ...>
   
 {% endhighlight %}
