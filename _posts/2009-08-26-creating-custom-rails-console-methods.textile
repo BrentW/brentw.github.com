@@ -21,7 +21,7 @@ make a new file there.
     def method_missing(*args)
       method = args[0].to_s
       if @controller.class == ApplicationController && #ensures it is in console
-      character = Character.find_by_l_name(method)
+      character = Character.find_by_name(method)
           character
         else
           raise NoMethodError #if all fails, it needs to raise the standard error
