@@ -1,6 +1,0 @@
----
-layout: post
-post_description: Description of 6th test post(finally)
----
-
-test 6
