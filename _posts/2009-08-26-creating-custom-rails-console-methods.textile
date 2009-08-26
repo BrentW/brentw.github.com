@@ -15,7 +15,7 @@ All code in the directory /config/initializers is run when rails starts, so
 make a new file there.
 
 object.rb
-{% highlight ruby }
+{% highlight ruby %}
   class Object
     def method_missing(*args)
       method = args[0].to_s
@@ -28,7 +28,7 @@ object.rb
       end
     end
   end
-{ endhighlight %}
+{% endhighlight %}
 
 Yes, we're adding a method to all objects; however, 
 "@controller.class == ApplicationController" ensures it's being called 
