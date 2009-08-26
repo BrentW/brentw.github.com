@@ -1,4 +1,4 @@
-chtml, body, h1, table, td, tr {
+html, body, h1, table, td, tr {
   margin: 0;
   padding: 0;
 }
@@ -9,7 +9,6 @@ body {
 
 #wrapper {
   width: 70%;
-  height: 100%;
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
@@ -19,6 +18,18 @@ body {
   border-right: 6px solid #658f9b;
   position: relative;
   top: 94px;
+}
+
+#height_buffer {
+  background-color: green;
+  height: 100%;
+  width: 0;
+  float: left;
+}
+
+#height_wrapper {
+  width: 100%; 
+  height: 100%;
 }
 
 h1 {
@@ -61,6 +72,7 @@ a, a:visited {
   margin-right: auto;
   position: relative;
   top: -94px;
+
 }
 
 #text_title {
@@ -74,7 +86,11 @@ a, a:visited {
 }
 
 #text_title div {
-  
+
+}
+
+#post_title {
+  color: #658f9b;
 }
 
 #content_wrapper {
