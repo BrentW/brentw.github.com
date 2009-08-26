@@ -201,3 +201,8 @@ a:hover {
   margin-right: 10px;
 }
 
+.highlight pre {
+  background:#EEEEEE none repeat scroll 0 0;
+  border:1px solid #CCCCCC;
+  padding:15px;
+}
