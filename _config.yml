@@ -2,7 +2,7 @@ destination: ./_site
 auto:        false
 lsi:         false
 server_port: 4040
-pygments:    false
+pygments:    true
 permalink:   date
 markdown:    maruku
 maruku:
