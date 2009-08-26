@@ -202,7 +202,12 @@ a:hover {
 }
 
 .highlight pre {
+  display:none;
+}
+
+.highlight pre .highlight pre {
   background:#EEEEEE none repeat scroll 0 0;
   border:1px solid #CCCCCC;
   padding:15px;
+  display: block !important;
 }
