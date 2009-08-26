@@ -17,14 +17,6 @@ make a new file there.
 object.rb
 {% highlight ruby %}
   class Object
-      method = args[0].to_s
-      character = Character.find_by_l_name(method)
-          character
-        else
-          raise NoMethodError #if all fails, it needs to raise the standard error
-        end
-      end
-    end
   end
 {% endhighlight %}
 
