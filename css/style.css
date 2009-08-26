@@ -148,6 +148,7 @@ a:hover {
   position: relative;
   top: -190px;
   width: 100%;
+  margin-left: 10px;
 }
 
 #info_separator {
@@ -210,3 +211,4 @@ a:hover {
 .highlight {
   font-size: .9em;
 }
+
