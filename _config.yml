@@ -4,6 +4,7 @@ lsi:         false
 server_port: 4040
 pygments:    false
 permalink:   date
+markdown:    maruku
 maruku:
   use_tex:    false
   use_divs:   false
