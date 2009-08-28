@@ -6,9 +6,9 @@ post_description: Create your own console only commands (methods) in rails.
 Tired of typing the same commands in console every time you
 fire it up?
 
-The straw that breaks my back is "Character.find_by_name('super_long_namesky')"
+The straw that breaks my back is "Character.find_by_name('super_long_nameski')"
 
-Using method missing, I'm going to make typing super_long_namesky
+Using method missing, I'm going to make typing super_long_nameski
 return its character.  
 
 One way to do this is to add methods to your .irbrc or .railsrc file.
@@ -45,9 +45,9 @@ is called outside of console, it returns the super value (probably an error).
 
 {% highlight irb %}
 
-  >> super_long_namesky
+  >> super_long_nameski
   => #<Character id: 2000297, salted_password: "f3a7bc8b40bb0256178", 
-  email: "super_long_email@example.com", name: 'super_long_namesky', ...>
+  email: "super_long_email@example.com", name: 'super_long_nameski', ...>
   
 {% endhighlight %}
 
