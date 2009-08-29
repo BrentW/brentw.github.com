@@ -1,6 +1,9 @@
 * {
   font-family: helvetica;
 }
+html, body {
+  width: 100%;
+}
 
 html, body, h1, table, td, tr, img {
   margin: 0;
@@ -33,6 +36,7 @@ body {
   margin-right: 6px;
   border-left: 1px solid #555;
   border-right: 1px solid #555;
+  min-width: 813px;
 }
 
 #outside_wrapper {
@@ -44,6 +48,7 @@ body {
   background-color: #658f9b;
   position: relative;
   top: 94px;
+  min-width: 848px;
 }
 
 #height_buffer {
@@ -54,7 +59,9 @@ body {
 }
 
 #height_wrapper {
-  width: 100%; 
+  width: 100%;
+  position: relative;
+  top: -190px; 
 }
 
 h1 {
@@ -134,6 +141,7 @@ a, a:visited {
 
 #post_title {
   color: #658f9b;
+  width: 50%;
 }
 
 a {
@@ -145,8 +153,6 @@ a:hover {
 }
 
 #content_wrapper {
-  position: relative;
-  top: -190px;
   width: 100%;
   margin-left: 10px;
 }
@@ -206,9 +212,11 @@ a:hover {
   background:#EEEEEE none repeat scroll 0 0;
   border:1px solid #CCCCCC;
   padding:15px;
+  width: 1200px;
 }
 
 .highlight {
-  font-size: .9em;
+  font-size: .8em;
+  width: 544px;
+  overflow-x: scroll;
 }
-

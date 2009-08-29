@@ -18,6 +18,8 @@
 
     <div id="outside_wrapper">
       <div id="inside_wrapper">      
+          <div id="width_buffer">
+          </div>
 
         <div id="title">
           <div id="text_title">
@@ -37,10 +39,14 @@
           </div>    
 
           <table id="content_wrapper">
+            <colgroup>
+              <col />
+              <col style="width: 260px;" />
+            </colgroup>              
             <tr>
               <td id="content_cell">
                 {{ content }}
-              <td>
+              </td>
               <td id="info_cells">
                 <div id="info_separator">
                 </div>
