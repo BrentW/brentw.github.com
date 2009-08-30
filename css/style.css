@@ -141,7 +141,6 @@ a, a:visited {
 
 #post_title {
   color: #658f9b;
-  width: 50%;
 }
 
 a {
@@ -219,4 +218,8 @@ a:hover {
   font-size: .8em;
   width: 544px;
   overflow-x: scroll;
+}
+
+.small {
+  font-size: .8em;
 }

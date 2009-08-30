@@ -1,0 +1,108 @@
+---
+layout: post
+post_description: Speed up your finds by implementing sql joins and selects via ActiveRecord.
+---
+I've got this situation.  And it calls for lightning fast selects across multiple 
+tables. Problem is, I'm not familiar with sql commands.
+
+That's fine.  I'll show you how you can leverage ActiveRecord to do the syntax for you. You know ruby right?
+
+Here's the gist of what I want:
+
+{% highlight ruby %}
+ranked_list = Character.all.sort do |character_a, character_b|
+  character_b.empire.total_cities <=> character_a.empire.total_cities
+end
+
+ranked_list[0..9]
+{% endhighlight %}
+
+If you're squirming at all, it means you know this looks terrible.
+It is. We're obviously generating a top 10 ranking of characters by total cities.
+But we're doing it in the slowest way possible.  
+
+Here's the resulting log.
+
+{% highlight irb %}
+  Character Load (0.021489)   SELECT * FROM "characters" 
+==> Got Buildings:2000145 from cache. (0.00039)
+  Buildings Load (0.001349)   SELECT * FROM "empires" WHERE ("empires"."character_id" = 2000145) LIMIT 1
+==> Set Buildings:2000145 to cache. (0.00056)
+==> Got Buildings:2000155 from cache. (0.00028)
+  Buildings Load (0.000908)   SELECT * FROM "empires" WHERE ("empires"."character_id" = 2000155) LIMIT 1
+==> Set Buildings:2000155 to cache. (0.00050)
+==> Got Buildings:2000185 from cache. (0.00030)
+  Buildings Load (0.000894)   SELECT * FROM "empires" WHERE ("empires"."character_id" = 2000185) LIMIT 1
+==> Set Buildings:2000185 to cache. (0.00048)
+==> Got Buildings:2000028 from cache. (0.00027)
+  Buildings Load (0.000920)   SELECT * FROM "empires" WHERE ("empires"."character_id" = 2000028) LIMIT 1
+==> Set Buildings:2000028 to cache. (0.00049)
+==> Got Buildings:1840428 from cache. (0.00027)
+
+... etc ... for every character ...
+{% endhighlight %}
+
+So, we're <a href="http://en.wiktionary.org/wiki/instantiate">instantiating</a> all characters into ruby objects, as well as looping through each one and creating ruby objects for all the empires just to compare the number of cities?
+
+What will your 199,990 active users (who didn't get on the list) think when their game is interrupted for 10 minutes to give nods to the biggest, go-getting jerks on the system?
+
+Alright.  We'll make it quicker, okay?
+
+{% highlight ruby %}
+ranked_list = Character.find(:all, 
+                :limit => 10,
+                :order => 'empires.total_cities DESC',
+                :joins => :empires
+              )
+{% endhighlight %}
+
+This looks a lot better - prettier too.  Find takes several useful options. Hopefully, you're already aware of the :limit and :order options. If not take some time to glance at <a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M002263"> find in the api</a>.  This page will become very familiar to you...
+
+Gloriously, no sql is needed for simple queries! Find's :joins key takes symbols (or an array of symbols if you're joining more than one table) for table names and by default inner joins the tables. Inner joins are usually what you're after.  In this case, an inner join would give me all the characters who already have an empire associated with them.
+
+ActiveRecord also allows for different types of joins, but you need to use a longer route. Say you wanted a list of all characters without the limit and ordered by total cities. You also want all the characters without empires and without cities in the list.  This would be a left outer join and would look a lot like:
+
+{% highlight ruby %}
+ranked_list = Character.find(:all, 
+                :order => 'empires.total_cities DESC',
+                :joins => "LEFT OUTER JOIN empires ON characters.id = empires.character_id"
+              )
+{% endhighlight %}
+
+So you have to spell out some basic sql. Not too hard. For more info on other types of joins, check out <a href="http://blog.sqlauthority.com/2009/04/13/sql-server-introduction-to-joins-basic-of-joins/">The Basic of JOINs</a> from Pinal Dave. As you can see, he's an authority in this area.
+
+Anyhow, lets look at the log of the previous select.
+
+{% highlight irb %}
+  Character Load (0.007788)   SELECT "characters".* FROM "characters" LEFT JOIN empires ON characters.id = empires.character_id ORDER BY empires.total_cities DESC LIMIT 10
+{% endhighlight %}
+
+As the numbers (the 0.007788, etc) indicate, this entire operation runs in about a third of the time as the first trial's character select. Beyond that, the first trial also has to load all of the empires.
+
+Believe it or not, we can get this faster still. The only data shown on the page, the only data we need, is the characters' names and city counts.  ActiveRecord, was being nice and assumed you wanted all the data columns. Well, we don't.
+
+It's easy to change that behavior.
+
+{% highlight ruby %}
+    Character.find(:all, 
+      :limit => 10,
+      :order => 'empires.total_cities DESC',
+      :joins => :empires,
+      :select => "empires.character_id, empires.total_cities, characters.name, characters.id"
+    )
+{% endhighlight %}
+
+Don't forget the join needs the character ids from each table to be in the select as well.
+
+{% highlight irb %}
+  Character Load (0.002742)   SELECT empires.character_id, empires.total_cities, characters.name, characters.id FROM "characters" INNER JOIN "empires" ON empires.character_id = characters.id ORDER BY empires.total_cities DESC LIMIT 10
+{% endhighlight %}
+
+Good God! We've brought the request down to under 3 milliseconds.  
+
+This should give you enough to time to do your ranking by population 
+and your ranking by soldiers 
+and your ranking by technology points 
+and y..
+
+
