@@ -60,6 +60,8 @@ This looks a lot better - prettier too.  Find takes several useful options. Hope
 
 Gloriously, no sql is needed for simple queries! Find's :joins key takes symbols (or an array of symbols if you're joining more than one table) for table names and by default inner joins the tables. Inner joins are usually what you're after.  In this case, an inner join would give me all the characters who already have an empire associated with them.
 
+You may be tempted to use an :include instead of a :joins in this situation.  Stick with the :joins for now, and I will exlain later on why the :include is slower.
+
 ActiveRecord also allows for different types of joins, but you need to use a longer route. Say you wanted a list of all characters without the limit and ordered by total cities. You also want all the characters without empires and without cities in the list.  This would be a left outer join and would look a lot like:
 
 {% highlight ruby %}
@@ -88,11 +90,21 @@ It's easy to change that behavior.
       :limit => 10,
       :order => 'empires.total_cities DESC',
       :joins => :empires,
-      :select => "empires.character_id, empires.total_cities, characters.name, characters.id"
+      :select => "empires.character_id, empires.total_cities as total_cities, characters.name, characters.id"
     )
 {% endhighlight %}
 
 Don't forget the join needs the character ids from each table to be in the select as well.
+
+I'll take a moment to clear up the :joins versus :include issue now.  Includes are for eager loading.  If we eager loaded (through an include) an empire with a character find,
+
+{% highlight ruby %}
+    Character.find(:all, :include => :empires)
+{% endhighlight %}
+
+when we called that character.empire, rails would magically already have it loaded. No database calls.  This sounds good, but the problem is that rails does not apply select statements to eagerly loaded columns.  In other words, we'd be loading up the entire empire, not just the city count.  The solution is to select columns on joined column *as* methods (ie: as total_cities above).  This way you can call the method on the character and have it return the value from the joined table.  Here, *character_instance*.total_cities would return the correct number.
+
+
 
 {% highlight irb %}
   Character Load (0.002742)   SELECT empires.character_id, empires.total_cities, characters.name, characters.id FROM "characters" INNER JOIN "empires" ON empires.character_id = characters.id ORDER BY empires.total_cities DESC LIMIT 10
@@ -103,6 +115,6 @@ Good God! We've brought the request down to under 3 milliseconds.
 This should give you enough to time to do your ranking by population 
 and your ranking by soldiers 
 and your ranking by technology points 
-and y..
+and your etc. etc.. etc...
 
 
