@@ -28,7 +28,7 @@ layout: nil
 
  {% for post in site.posts %}
    <url>
-     <loc>href="http://brentw.github.com{{ post.url }}"</loc>
+     <loc>http://brentw.github.com{{ post.url }}</loc>
      <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
      <changefreq>never</changefreq>
      <priority>0.3</priority>
