@@ -102,9 +102,13 @@ I'll take a moment to clear up the :joins versus :include issue now.  Includes a
     Character.find(:all, :include => :empires)
 {% endhighlight %}
 
-when we called that character.empire, rails would magically already have it loaded. No database calls.  This sounds good, but the problem is that rails does not apply select statements to eagerly loaded columns.  In other words, we'd be loading up the entire empire, not just the city count.  The solution is to select columns on joined column *as* methods (ie: as total_cities above).  This way you can call the method on the character and have it return the value from the joined table.  Here, *character_instance*.total_cities would return the correct number.
+when we called that character.empire, rails would magically already have it loaded. No database calls.  This sounds good, but the problem is that rails does not apply select statements to eagerly loaded columns.  In other words, we'd be loading up the entire empire, not just the city count.  
 
+The solution is to select columns on joined column *as* methods (ie: as total_cities above).  This way you can call the method on the character and have it return the value from the joined table.  Here, *character_instance*.total_cities would return the correct number.
 
+You now have the 3 values you needed for a ranking: the order (index in the character array), the name (character.name), and the count (character.total_cities).
+
+Let's see how the database handled it.
 
 {% highlight irb %}
   Character Load (0.002742)   SELECT empires.character_id, empires.total_cities, characters.name, characters.id FROM "characters" INNER JOIN "empires" ON empires.character_id = characters.id ORDER BY empires.total_cities DESC LIMIT 10
@@ -114,7 +118,11 @@ Good God! We've brought the request down to under 3 milliseconds.
 
 This should give you enough to time to do your ranking by population 
 and your ranking by soldiers 
-and your ranking by technology points 
+and your ranking by technology points
+and your ranking by kills
+and your ranking by economy
+and your ranking by hit points
+and your ranking by number of collected cracked sashes 
 and your etc. etc.. etc...
 
 
