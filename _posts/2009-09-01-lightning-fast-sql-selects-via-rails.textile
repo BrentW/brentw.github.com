@@ -88,7 +88,7 @@ It's easy to change that behavior.
 {% highlight ruby %}
     Character.find(:all, 
       :limit => 10,
-      :order => 'empires.total_cities DESC',
+      :order => 'total_cities DESC',
       :joins => :empires,
       :select => "empires.character_id, empires.total_cities as total_cities, characters.name, characters.id"
     )
