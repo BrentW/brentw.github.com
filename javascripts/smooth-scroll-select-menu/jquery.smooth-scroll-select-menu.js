@@ -1,7 +1,7 @@
 $(document).ready(function() {
   (function( $ ){
     function smoothScrollSelectMenu(selectTag, options) {
-      this.options      = options || {};      
+      this.options      = options || new Object;      
       var scrollTime    = options.scrollTime || 200;
       var scrollEvent   = options.scrollEvent || 'hover';
 
