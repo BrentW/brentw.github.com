@@ -15,7 +15,7 @@ $(document).ready(function() {
 			return params;
 		}
 	
-		var params = getParams();
+		params = getParams();
 
 		if(params['car_makes']){
 		  params['car_makes'].each(function(index, make){
