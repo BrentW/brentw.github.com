@@ -45,6 +45,6 @@ li.jq_smoothScrollSelectScroll.on {
   color: #0a0;
 }
 
-li.jq_smoothScrollSelectScroll.off {
+li.jq_smoothScrollSelectScroll {
   color: #400;
 }
