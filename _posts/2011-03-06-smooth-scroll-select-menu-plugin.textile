@@ -2,13 +2,12 @@
 layout: post
 post_description: Using jQuery plugin, customize and style select tags with extremely large amounts of options.
 ---
-h2.Smooth Scroll Select Menu
-=============
+<h2>Smooth Scroll Select Menu</h2>
+
 This plugin was created in order to style select tags with extremely large amounts of options.
 
 
-h2.Features
-<hr />
+<h2>Features</h2>
 
 * Changes select and option tags to a ul with lis tied to a hidden input.
 * Scrolls page down to the top of select to allow the greatest number of options to show on page.
@@ -17,41 +16,112 @@ h2.Features
 * Allows hover to scroll time to be adjusted.
 * Supports after select and after open callbacks.
 
-h2.Usage
-<hr />
+<form action="" method="GET">
+<h2>Demos</h2>
 
 Hover to scroll example:
 
 {% highlight javascript %}
-    	$('select.classToChange').jq_smoothScrollSelect({
-			scrollTime: 200,
-			afterSelect: function(clicked_li){
-				alert('You selected ' + clicked_li.html() + '!');
-			},
-			afterOpen: function(){
-				//alert('Open!');
-			}
-		});
+$('select.classToChange').jq_smoothScrollSelect({
+	scrollTime: 200,
+	afterSelect: function(clicked_li){
+		alert('You selected ' + clicked_li.html() + '!');
+	},
+	afterOpen: function(){
+		alert('Open!');
+	}
+});
 {% endhighlight %}
+
+<select name="car_make" class="jq_smoothScrollSelect" id="car_select">
+  <option value="acura">Acura</option>
+  <option value="alfaromeo">Alfa Romeo</option>
+  <option value="audi">Audi</option>
+  <option value="bmw">BMW</option>
+  <option value="buick">Buick</option>
+  <option value="cadillac">Cadillac</option>
+  <option value="chevy">Chevy</option>
+  <option value="chrysler">Chrysler</option>
+  <option value="dodge">Dodge</option>
+  <option value="eagle">Eagle</option>
+  <option value="ford">Ford</option>			
+  <option value="geo">Geo</option>
+  <option value="gmc">GMC</option>
+  <option value="honda">Honda</option>
+	<option value="hummer">Hummer</option>
+  <option value="infinity">Infinity</option>
+  <option value="isuzu">Isuzu</option>
+  <option value="jaguar">Jaguar</option>
+  <option value="jeep">Jeep</option>
+  <option value="kia">Kia</option>
+  <option value="landrover">Land Rover</option>
+  <option value="lexus">Lexus</option>
+  <option value="lincoln">Lincoln</option>
+  <option value="mazda">Mazda</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="mercury">Mercury</option>
+  <option value="mini">MINI</option>
+  <option value="mitsubishi">Mitsubishi</option>
+  <option value="nissan">Nissan</option>
+  <option value="oldsmobile">Oldsmobile</option>
+  <option value="opel">Opel</option>
+  <option value="pontiac">Pontiac</option>
+  <option value="proshe">Porsche</option>
+  <option value="plymouth">Plymouth</option>
+  <option value="renault">Renault</option>
+  <option value="saab">Saab</option>
+  <option value="saturn">Saturn</option>
+  <option value="scion">Scion</option>
+  <option value="smart">Smart</option>
+  <option value="suburu">Suburu</option>
+  <option value="Suzuki">Suzuki</option>
+  <option value="toyota">Toyota</option>
+  <option value="volkswagon">Volkswagon</option>
+  <option value="volvo">Volvo</option>
+  <option value="yamaha">Yamaha</option>
+</select>
 
 Click to scroll example:
 
 {% highlight javascript %}
-		$('select.classToChange').jq_smoothScrollSelect({
-			scrollEvent: 'click'
-		});
+$('select.classToChange').jq_smoothScrollSelect({
+	scrollEvent: 'click'
+});
 {% endhighlight %}
 
+<select name="car_make2" class="jq_smoothScrollSelect" id="car_select2">
+  <option value="acura">Acura</option>
+  <option value="alfaromeo">Alfa Romeo</option>
+  <option value="audi">Audi</option>
+  <option value="bmw">BMW</option>
+  <option value="buick">Buick</option>
+  <option value="cadillac">Cadillac</option>
+  <option value="chevy">Chevy</option>
+  <option value="chrysler">Chrysler</option>
+  <option value="dodge">Dodge</option>
+  <option value="eagle">Eagle</option>
+  <option value="ford">Ford</option>			
+  <option value="geo">Geo</option>
+  <option value="gmc">GMC</option>
+  <option value="honda">Honda</option>
+	<option value="hummer">Hummer</option>
+  <option value="infinity">Infinity</option>
+  <option value="isuzu">Isuzu</option>
+  <option value="jaguar">Jaguar</option>
+  <option value="jeep">Jeep</option>
+  <option value="kia">Kia</option>
+  <option value="landrover">Land Rover</option>
+  <option value="lexus">Lexus</option>
+  <option value="lincoln">Lincoln</option>
+</select>
 
-h2.Requirements
-<hr />
+<h2>Requirements</h2>
 
 * "jQuery 1.4":http://docs.jquery.com/Downloading_jQuery
 * "Karl Swedberg jquery-smooth-scroll":https://github.com/kswedberg/jquery-smooth-scroll
 * "jquery-mousewheel":http://plugins.jquery.com/project/mousewheel (optional)
 
-h2.Special Thanks
-<hr />
+<h2>Special Thanks</h2>
 
 * Karl Swedberg - provided the smooth scrolling functionality.
 "https://github.com/kswedberg/jquery-smooth-scroll":https://github.com/kswedberg/jquery-smooth-scroll
@@ -61,82 +131,6 @@ h2.Special Thanks
 
 * Brandon Dewitt - suggested this code be pluginized.
 "http://twitter.com/abrandoned":http://www.kylehaskins.com
-
-
-<form action="" method="GET">
-	<select name="car_make" class="jq_smoothScrollSelect" id="car_select">
-	  <option value="acura">Acura</option>
-	  <option value="alfaromeo">Alfa Romeo</option>
-	  <option value="audi">Audi</option>
-	  <option value="bmw">BMW</option>
-	  <option value="buick">Buick</option>
-	  <option value="cadillac">Cadillac</option>
-	  <option value="chevy">Chevy</option>
-	  <option value="chrysler">Chrysler</option>
-	  <option value="dodge">Dodge</option>
-	  <option value="eagle">Eagle</option>
-	  <option value="ford">Ford</option>			
-	  <option value="geo">Geo</option>
-	  <option value="gmc">GMC</option>
-	  <option value="honda">Honda</option>
-		<option value="hummer">Hummer</option>
-	  <option value="infinity">Infinity</option>
-	  <option value="isuzu">Isuzu</option>
-	  <option value="jaguar">Jaguar</option>
-	  <option value="jeep">Jeep</option>
-	  <option value="kia">Kia</option>
-	  <option value="landrover">Land Rover</option>
-	  <option value="lexus">Lexus</option>
-	  <option value="lincoln">Lincoln</option>
-	  <option value="mazda">Mazda</option>
-	  <option value="mercedes">Mercedes</option>
-	  <option value="mercury">Mercury</option>
-	  <option value="mini">MINI</option>
-	  <option value="mitsubishi">Mitsubishi</option>
-	  <option value="nissan">Nissan</option>
-	  <option value="oldsmobile">Oldsmobile</option>
-	  <option value="opel">Opel</option>
-	  <option value="pontiac">Pontiac</option>
-	  <option value="proshe">Porsche</option>
-	  <option value="plymouth">Plymouth</option>
-	  <option value="renault">Renault</option>
-	  <option value="saab">Saab</option>
-	  <option value="saturn">Saturn</option>
-	  <option value="scion">Scion</option>
-	  <option value="smart">Smart</option>
-	  <option value="suburu">Suburu</option>
-	  <option value="Suzuki">Suzuki</option>
-	  <option value="toyota">Toyota</option>
-	  <option value="volkswagon">Volkswagon</option>
-	  <option value="volvo">Volvo</option>
-	  <option value="yamaha">Yamaha</option>
-	</select>
-
-	<select name="car_make2" class="jq_smoothScrollSelect" id="car_select2">
-	  <option value="acura">Acura</option>
-	  <option value="alfaromeo">Alfa Romeo</option>
-	  <option value="audi">Audi</option>
-	  <option value="bmw">BMW</option>
-	  <option value="buick">Buick</option>
-	  <option value="cadillac">Cadillac</option>
-	  <option value="chevy">Chevy</option>
-	  <option value="chrysler">Chrysler</option>
-	  <option value="dodge">Dodge</option>
-	  <option value="eagle">Eagle</option>
-	  <option value="ford">Ford</option>			
-	  <option value="geo">Geo</option>
-	  <option value="gmc">GMC</option>
-	  <option value="honda">Honda</option>
-		<option value="hummer">Hummer</option>
-	  <option value="infinity">Infinity</option>
-	  <option value="isuzu">Isuzu</option>
-	  <option value="jaguar">Jaguar</option>
-	  <option value="jeep">Jeep</option>
-	  <option value="kia">Kia</option>
-	  <option value="landrover">Land Rover</option>
-	  <option value="lexus">Lexus</option>
-	  <option value="lincoln">Lincoln</option>
-	</select>
 
 	<div style="clear:both;"></div><br/>
 	<input type="submit" value="Choose Make" />
