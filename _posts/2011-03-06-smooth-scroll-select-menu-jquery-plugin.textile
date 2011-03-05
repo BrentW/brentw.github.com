@@ -372,7 +372,7 @@ $('select.jq_smallSelectExample').jq_smoothScrollSelect();
 
 <br />
 
-<h3>Thanks To</h3>
+<h3>Thank You</h3>
 
 * Karl Swedberg - provided the smooth scrolling functionality.
 "https://github.com/kswedberg/jquery-smooth-scroll":https://github.com/kswedberg/jquery-smooth-scroll
