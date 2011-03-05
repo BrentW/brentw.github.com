@@ -1,6 +1,11 @@
 div.jq_smoothScrollSelectWrap {
   border: 1px solid black;
   width: 100px;
+  float: left;
+}
+
+input[type="submit"] {
+  float: right;
 }
 
 div.jq_smoothScrollSelectWrap div {
