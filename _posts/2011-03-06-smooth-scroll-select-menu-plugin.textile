@@ -112,8 +112,8 @@ $('select.classToChange').jq_smoothScrollSelect({
 	  <option value="landrover">Land Rover</option>
 	  <option value="lexus">Lexus</option>
 	  <option value="lincoln">Lincoln</option>
-	</select>
-	<input type="submit" value="Choose Make" />
+	</select><input type="submit" value="Choose Make" />
+	
 	
 </div>
 
