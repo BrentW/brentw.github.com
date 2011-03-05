@@ -30,12 +30,19 @@ $(document).ready(function() {
 			selectedOption.attr('selected', 'true');
 		}								
 	//END DEMO CODE TO ALLOW URL PARAMS WITH ONLY JS
-	
-  $('select.jq_hoverToScroll').jq_smoothScrollSelect({
+
+  $('select.jq_hoverToScroll').jq_smoothScrollSelect();
+
+  $('select.jq_changeScrollSpeed').jq_smoothScrollSelect({
+  	scrollTime: 80
+  });
+
+  $('select.jq_clickToScroll').jq_smoothScrollSelect({
+  	scrollEvent: 'click'
+  });
+
+  $('select.jq_afterOpenExample').jq_smoothScrollSelect({
   	scrollTime: 200,
-  	afterSelect: function(clicked_li){
-  		alert('You selected ' + clicked_li.html() + '!');
-  	},
   	afterOpen: function(wrapper){
   		wrapper.find('li').each(function(index, element){
   			var colors = ['red', 'white', 'blue']
@@ -43,8 +50,10 @@ $(document).ready(function() {
   		})
   	}
   });
-  
-  $('select.jq_clickToScroll').jq_smoothScrollSelect({
-  	scrollEvent: 'click'
+	
+  $('select.jq_afterSelectExample').jq_smoothScrollSelect({
+  	afterSelect: function(clicked_li){
+  		alert('You selected ' + clicked_li.html() + '!');
+  	}
   });
 });
