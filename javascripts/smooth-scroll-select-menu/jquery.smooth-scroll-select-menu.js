@@ -195,6 +195,15 @@ $(document).ready(function() {
         menu().find('.jq_smoothScrollSelectScroll').hide();
       };
       
+      var setLastLiBorderBottom = function(){
+        var borderElement = menu().find('li').first();
+        
+        if(parseInt(borderElement.css('border-left-width').replace('px', ''), 10) > 0){
+          var color = borderElement.css('border-left-color')
+          menu().find('li:visible').last().css('border-bottom', '1px solid ' + color);          
+        }
+      };      
+      
       var open = function(){
         menu().show(); 
         resetLiVisibility();
@@ -206,6 +215,7 @@ $(document).ready(function() {
           $('html, body').scrollable().animate({scrollTop:menuOverflow()}, 1000);
         }
         
+        setLastLiBorderBottom();
         afterOpenCallback(selectWrap);
       };
 
