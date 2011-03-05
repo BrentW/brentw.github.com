@@ -17,18 +17,15 @@ $(document).ready(function() {
 	
 		var params = getParams();
 
-		if(params['car_make']){
-			$('body').append('<div>Make selected: ' + params['car_make'] + '</div>');
-			var selectTag = $('select[name="car_make"]');
-			var selectedOption = selectTag.find('option[value="' + params['car_make'] + '"]');
-			selectedOption.attr('selected', 'true');
+		if(params['car_makes']){
+		  params['car_makes'].each(function(index, make){
+        console.log(make)
+  			var selectTag = $('select[name="car_makes[' + index + 1 +']"]');
+  			var selectedOption = selectTag.find('option[value="' + params['car_makes'][index + 1] + '"]');
+  			selectedOption.attr('selected', 'true');
+		  });
 		}
-		if(params['car_make2']){
-			$('body').append('<div>Second Make selected: ' + params['car_make2'] + '</div>');
-			var selectTag = $('select[name="car_make2"]');
-			var selectedOption = selectTag.find('option[value="' + params['car_make2'] + '"]');
-			selectedOption.attr('selected', 'true');
-		}								
+				
 	//END DEMO CODE TO ALLOW URL PARAMS WITH ONLY JS
 
   $('select.jq_hoverToScroll').jq_smoothScrollSelect();

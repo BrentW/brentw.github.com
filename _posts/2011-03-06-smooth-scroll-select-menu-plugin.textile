@@ -345,7 +345,9 @@ $('select.jq_afterSelectExample').jq_smoothScrollSelect({
 * "Karl Swedberg jquery-smooth-scroll":https://github.com/kswedberg/jquery-smooth-scroll
 * "jquery-mousewheel":http://plugins.jquery.com/project/mousewheel (optional)
 
-<h3>Special Thanks</h3>
+<br />
+
+<h3>Thanks To</h3>
 
 * Karl Swedberg - provided the smooth scrolling functionality.
 "https://github.com/kswedberg/jquery-smooth-scroll":https://github.com/kswedberg/jquery-smooth-scroll
