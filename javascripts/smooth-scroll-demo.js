@@ -17,7 +17,7 @@ $(document).ready(function() {
 	
 		var params = getParams();
 
-    $([1,2,3,4,5]).each(function(index, element){
+    $([1,2,3,4,5,6]).each(function(index, element){
       if(params['car_make' + element]){
   			var selectTag = $('select[name="car_make' + element + '"]');
   			var selectedOption = selectTag.find('option[value="' + params['car_make' + element] + '"]');
@@ -52,4 +52,7 @@ $(document).ready(function() {
   		alert('You selected ' + clicked_li.html() + '!');
   	}
   });
+  
+  $('select.jq_smallSelectExample').jq_smoothScrollSelect();
+  
 });
