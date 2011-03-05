@@ -14,6 +14,7 @@ This plugin was created in order to style select tags with extremely large amoun
 * Allows hover to scroll time to be adjusted.
 * Supports after select and after open callbacks.
 * Select classes and Id are transferred to new div wrapper.
+* Mouse wheel will scroll list.
 * Degrades gracefully when javascript is disabled.
 
 <form action="" method="GET">
