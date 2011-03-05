@@ -13,11 +13,10 @@ This plugin was created in order to style select tags with extremely large amoun
 * Includes click to scroll and hover to scroll behaviors. Hover is the default.
 * Allows hover to scroll time to be adjusted.
 * Supports after select and after open callbacks.
+* Degrades gracefully when javascript is disabled.
 
 <form action="" method="GET">
-<h3>Demos</h3>
-
-<p>Hover to scroll example:</p>
+<h3>Hover to scroll example</h3>
 
 {% highlight javascript %}
 $('select.classToChange').jq_smoothScrollSelect({
@@ -80,7 +79,7 @@ $('select.classToChange').jq_smoothScrollSelect({
 	  <option value="yamaha">Yamaha</option>
 	</select>
 </p>
-<p>Click to scroll example:</p>
+<h3>Click to scroll example:</h3>
 
 {% highlight javascript %}
 $('select.classToChange').jq_smoothScrollSelect({
