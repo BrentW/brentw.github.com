@@ -217,7 +217,6 @@ a:hover {
   border:1px solid #CCCCCC;
   padding:15px;
   width: 1200px;
-  font-family: monaco, sans-serif;
 }
 
 .highlight {
@@ -226,6 +225,10 @@ a:hover {
   overflow-x: scroll;
 }
 
+.hightlight * {
+  font-family: monaco, sans-serif !important;
+  font-size: 1.7em;
+}
 .small {
   font-size: .8em;
 }
