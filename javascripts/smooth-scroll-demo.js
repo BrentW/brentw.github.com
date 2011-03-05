@@ -31,13 +31,20 @@ $(document).ready(function() {
 		}								
 	//END DEMO CODE TO ALLOW URL PARAMS WITH ONLY JS
 	
-	$('select.jq_smoothScrollSelect').jq_smoothScrollSelect({
-		scrollTime: 200,
-		afterSelect: function(clicked_li){
-			alert('You selected ' + clicked_li.html() + '!');
-		},
-		afterOpen: function(){
-			//alert('Open!');
-		}
-	});
+  $('select.jq_hoverToScroll').jq_smoothScrollSelect({
+  	scrollTime: 200,
+  	afterSelect: function(clicked_li){
+  		alert('You selected ' + clicked_li.html() + '!');
+  	},
+  	afterOpen: function(wrapper){
+  		wrapper.find('li').each(function(index, element){
+  			var colors = ['red', 'white', 'blue']
+  			$(element).css('background-color', colors[index % 3]);
+  		})
+  	}
+  });
+  
+  $('select.jq_clickToScroll').jq_smoothScrollSelect({
+  	scrollEvent: 'click'
+  });
 });

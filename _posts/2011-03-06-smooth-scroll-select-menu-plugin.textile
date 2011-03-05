@@ -16,11 +16,11 @@ This plugin was created in order to style select tags with extremely large amoun
 * Degrades gracefully when javascript is disabled.
 
 <form action="" method="GET">
-<br /><br />
+<br />
 
 <h3>Hover to scroll example</h3>
 <p>
-	<select name="car_make" class="jq_smoothScrollSelect" id="car_select">
+	<select name="car_make" class="jq_hoverToScroll" id="car_select">
 	  <option value="acura">Acura</option>
 	  <option value="alfaromeo">Alfa Romeo</option>
 	  <option value="audi">Audi</option>
@@ -73,22 +73,25 @@ This plugin was created in order to style select tags with extremely large amoun
 </p>
 
 {% highlight javascript %}
-$('select.classToChange').jq_smoothScrollSelect({
+$('select.jq_hoverToScroll').jq_smoothScrollSelect({
 	scrollTime: 200,
 	afterSelect: function(clicked_li){
 		alert('You selected ' + clicked_li.html() + '!');
 	},
-	afterOpen: function(){
-		alert('Open!');
+	afterOpen: function(wrapper){
+		wrapper.find('li').each(function(index, element){
+			var colors = ['red', 'white', 'blue']
+			$(element).css('background-color', colors[index % 3]);
+		})
 	}
 });
 {% endhighlight %}
 
-<br /><br />
+<br />
 
 <h3>Click to scroll example</h3>
 <div>
-	<select name="car_make2" class="jq_smoothScrollSelect" id="car_select2">
+	<select name="car_make2" class="jq_clickToScroll" id="car_select2">
 	  <option value="acura">Acura</option>
 	  <option value="alfaromeo">Alfa Romeo</option>
 	  <option value="audi">Audi</option>
@@ -112,6 +115,28 @@ $('select.classToChange').jq_smoothScrollSelect({
 	  <option value="landrover">Land Rover</option>
 	  <option value="lexus">Lexus</option>
 	  <option value="lincoln">Lincoln</option>
+	  <option value="mazda">Mazda</option>
+	  <option value="mercedes">Mercedes</option>
+	  <option value="mercury">Mercury</option>
+	  <option value="mini">MINI</option>
+	  <option value="mitsubishi">Mitsubishi</option>
+	  <option value="nissan">Nissan</option>
+	  <option value="oldsmobile">Oldsmobile</option>
+	  <option value="opel">Opel</option>
+	  <option value="pontiac">Pontiac</option>
+	  <option value="proshe">Porsche</option>
+	  <option value="plymouth">Plymouth</option>
+	  <option value="renault">Renault</option>
+	  <option value="saab">Saab</option>
+	  <option value="saturn">Saturn</option>
+	  <option value="scion">Scion</option>
+	  <option value="smart">Smart</option>
+	  <option value="suburu">Suburu</option>
+	  <option value="Suzuki">Suzuki</option>
+	  <option value="toyota">Toyota</option>
+	  <option value="volkswagon">Volkswagon</option>
+	  <option value="volvo">Volvo</option>
+	  <option value="yamaha">Yamaha</option>
 	</select>
 	
 	<input type="submit" value="Choose Make" />
@@ -120,12 +145,14 @@ $('select.classToChange').jq_smoothScrollSelect({
 </div>
 
 {% highlight javascript %}
-$('select.classToChange').jq_smoothScrollSelect({
+$('select.jq_clickToScroll').jq_smoothScrollSelect({
 	scrollEvent: 'click'
 });
 {% endhighlight %}
 
-<br /><br />
+<br />
+
+</form>
 
 <h3>Requirements</h3>
 
@@ -143,5 +170,3 @@ $('select.classToChange').jq_smoothScrollSelect({
 
 * Brandon Dewitt - suggested this code be pluginized.
 "http://twitter.com/abrandoned":http://www.kylehaskins.com
-
-</form>
