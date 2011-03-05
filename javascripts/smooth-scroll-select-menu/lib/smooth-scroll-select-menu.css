@@ -40,3 +40,11 @@ li.jq_smoothScrollSelectScrollUp {
 li.jq_smoothScrollSelectScrollDown {
   border-top: 1px solid #aaa;
 }
+
+li.jq_smoothScrollSelectScroll.on {
+  color: #0a0;
+}
+
+li.jq_smoothScrollSelectScroll.off {
+  color: #400;
+}
