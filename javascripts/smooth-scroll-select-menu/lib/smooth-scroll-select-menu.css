@@ -14,10 +14,12 @@ ul.jq_smoothScrollSelectList {
   border-top: 1px solid black;
   padding: 0;
   margin: 0;
+  position: absolute;
 }
 ul.jq_smoothScrollSelectList li {
   list-style-type: none;
   padding: 2px 4px;
+  position: absolute;
 }
 
 li.jq_smoothScrollSelectScrollUp {

@@ -17,19 +17,6 @@ This plugin was created in order to style select tags with extremely large amoun
 
 <form action="" method="GET">
 <h3>Hover to scroll example</h3>
-
-{% highlight javascript %}
-$('select.classToChange').jq_smoothScrollSelect({
-	scrollTime: 200,
-	afterSelect: function(clicked_li){
-		alert('You selected ' + clicked_li.html() + '!');
-	},
-	afterOpen: function(){
-		alert('Open!');
-	}
-});
-{% endhighlight %}
-
 <p>
 	<select name="car_make" class="jq_smoothScrollSelect" id="car_select">
 	  <option value="acura">Acura</option>
@@ -79,14 +66,19 @@ $('select.classToChange').jq_smoothScrollSelect({
 	  <option value="yamaha">Yamaha</option>
 	</select>
 </p>
-<h3>Click to scroll example:</h3>
-
 {% highlight javascript %}
 $('select.classToChange').jq_smoothScrollSelect({
-	scrollEvent: 'click'
+	scrollTime: 200,
+	afterSelect: function(clicked_li){
+		alert('You selected ' + clicked_li.html() + '!');
+	},
+	afterOpen: function(){
+		alert('Open!');
+	}
 });
 {% endhighlight %}
 
+<h3>Click to scroll example</h3>
 <p>
 	<select name="car_make2" class="jq_smoothScrollSelect" id="car_select2">
 	  <option value="acura">Acura</option>
@@ -114,6 +106,11 @@ $('select.classToChange').jq_smoothScrollSelect({
 	  <option value="lincoln">Lincoln</option>
 	</select>
 </p>
+{% highlight javascript %}
+$('select.classToChange').jq_smoothScrollSelect({
+	scrollEvent: 'click'
+});
+{% endhighlight %}
 
 <h3>Requirements</h3>
 

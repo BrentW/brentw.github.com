@@ -223,12 +223,10 @@ a:hover {
   font-size: .8em;
   width: 544px;
   overflow-x: scroll;
+  font-family: monaco, sans-serif !important;
+  font-size: 1.7em !important;  
 }
 
-.hightlight * {
-  font-family: monaco, sans-serif !important;
-  font-size: 1.7em;
-}
 .small {
   font-size: .8em;
 }
