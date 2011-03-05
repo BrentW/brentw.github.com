@@ -2,16 +2,68 @@
 layout: post
 post_description: Using jQuery plugin, customize and style select tags with extremely large amounts of options.
 ---
+h2.Smooth Scroll Select Menu
+=============
+This plugin was created in order to style select tags with extremely large amounts of options.
+
+
+h2.Features
+<hr />
+
+* Changes select and option tags to a ul with lis tied to a hidden input.
+* Scrolls page down to the top of select to allow the greatest number of options to show on page.
+* Adds scroll lis to the top and bottom of the list if the list is too big for the page.
+* Includes click to scroll and hover to scroll behaviors. Hover is the default.
+* Allows hover to scroll time to be adjusted.
+* Supports after select and after open callbacks.
+
+h2.Usage
+<hr />
+
+Hover to scroll example:
+
+{% highlight javascript %}
+    	$('select.classToChange').jq_smoothScrollSelect({
+			scrollTime: 200,
+			afterSelect: function(clicked_li){
+				alert('You selected ' + clicked_li.html() + '!');
+			},
+			afterOpen: function(){
+				//alert('Open!');
+			}
+		});
+{% endhighlight %}
+
+Click to scroll example:
+
+{% highlight javascript %}
+		$('select.classToChange').jq_smoothScrollSelect({
+			scrollEvent: 'click'
+		});
+{% endhighlight %}
+
+
+h2.Requirements
+<hr />
+
+* "jQuery 1.4":http://docs.jquery.com/Downloading_jQuery
+* "Karl Swedberg jquery-smooth-scroll":https://github.com/kswedberg/jquery-smooth-scroll
+* "jquery-mousewheel":http://plugins.jquery.com/project/mousewheel (optional)
+
+h2.Special Thanks
+<hr />
+
+* Karl Swedberg - provided the smooth scrolling functionality.
+"https://github.com/kswedberg/jquery-smooth-scroll":https://github.com/kswedberg/jquery-smooth-scroll
+
+* Kyle Haskins - set the crazy requirements for such a plugin to be created.
+"http://www.kylehaskins.com":http://www.kylehaskins.com
+
+* Brandon Dewitt - suggested this code be pluginized.
+"http://twitter.com/abrandoned":http://www.kylehaskins.com
 
 
 <form action="" method="GET">
-  <p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consequat adipiscing est, nec pellentesque lacus volutpat eget. Nunc quis nulla lorem, sit amet ultrices erat. In vehicula posuere massa varius tincidunt. Curabitur vitae felis augue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras faucibus ipsum imperdiet ligula egestas accumsan euismod sem accumsan. Duis imperdiet congue augue, sit amet tincidunt mi pretium vel. Vestibulum rutrum placerat scelerisque. Quisque pretium urna non eros lobortis non posuere nulla tempor. Proin porttitor gravida lectus, id scelerisque nisi feugiat at. Vestibulum accumsan ultrices lectus quis sollicitudin. Donec felis enim, viverra sed euismod sed, ultrices sit amet magna. Aenean cursus augue eget magna molestie aliquet. Proin suscipit arcu id turpis sollicitudin ut blandit enim convallis. Cras laoreet turpis non arcu fringilla posuere. Ut quis aliquet ligula. Sed dapibus felis non nulla commodo ac scelerisque ante vestibulum. Sed leo dui, venenatis ac sagittis eu, ullamcorper eu libero.
-	</p>
-	<p>
-		Curabitur fringilla metus vel massa commodo ac ornare tellus aliquet. Suspendisse eget ante felis. Nunc at risus massa, eu volutpat mauris. Integer neque eros, luctus in convallis ac, mattis vitae sapien. Nam ut volutpat dolor. Sed feugiat cursus dolor sit amet elementum. Vivamus eu mi ligula, in accumsan mauris. Fusce in velit blandit velit posuere consectetur. Proin vulputate sodales lectus sit amet scelerisque. Quisque sit amet bibendum libero. Cras tincidunt lacinia ante, sit amet iaculis libero elementum a. In quis justo purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec risus sem, congue et eleifend eget, convallis gravida erat. Nulla facilisi. Etiam at nibh id ipsum dignissim lacinia eu sed lacus.
-	</p>
-
 	<select name="car_make" class="jq_smoothScrollSelect" id="car_select">
 	  <option value="acura">Acura</option>
 	  <option value="alfaromeo">Alfa Romeo</option>
