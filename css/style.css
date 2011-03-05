@@ -1,5 +1,6 @@
 * {
-  font-family: helvetica;
+  font-family: verdana;
+  font-size: 0.975em;
 }
 html, body {
   width: 100%;
@@ -69,6 +70,10 @@ h1 {
   height: 129px;
   font-size: 2.4em;
 
+}
+
+h2 {
+  font-size: 1.7em;
 }
 
 h2.post_fragment_title {
@@ -212,6 +217,7 @@ a:hover {
   border:1px solid #CCCCCC;
   padding:15px;
   width: 1200px;
+  font-family: monaco, sans-serif;
 }
 
 .highlight {
