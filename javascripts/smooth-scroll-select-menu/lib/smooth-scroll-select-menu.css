@@ -23,7 +23,9 @@ ul.jq_smoothScrollSelectList li {
   border-left: 1px solid black;
   border-right: 1px solid black;
   position: relative;
-  left: -1;
+  left: -1px;
+  margin-right: -1px;
+  width: 92px;
 }
 
 li.jq_smoothScrollSelectScrollUp {

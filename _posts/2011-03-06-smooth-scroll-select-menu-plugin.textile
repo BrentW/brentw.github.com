@@ -16,6 +16,8 @@ This plugin was created in order to style select tags with extremely large amoun
 * Degrades gracefully when javascript is disabled.
 
 <form action="" method="GET">
+<br /><br />
+
 <h3>Hover to scroll example</h3>
 <p>
 	<select name="car_make" class="jq_smoothScrollSelect" id="car_select">
@@ -65,7 +67,11 @@ This plugin was created in order to style select tags with extremely large amoun
 	  <option value="volvo">Volvo</option>
 	  <option value="yamaha">Yamaha</option>
 	</select>
+	
+	<input type="submit" value="Choose Make" />
+	
 </p>
+
 {% highlight javascript %}
 $('select.classToChange').jq_smoothScrollSelect({
 	scrollTime: 200,
@@ -77,6 +83,8 @@ $('select.classToChange').jq_smoothScrollSelect({
 	}
 });
 {% endhighlight %}
+
+<br /><br />
 
 <h3>Click to scroll example</h3>
 <div>
@@ -105,12 +113,17 @@ $('select.classToChange').jq_smoothScrollSelect({
 	  <option value="lexus">Lexus</option>
 	  <option value="lincoln">Lincoln</option>
 	</select>
+	<input type="submit" value="Choose Make" />
+	
 </div>
+
 {% highlight javascript %}
 $('select.classToChange').jq_smoothScrollSelect({
 	scrollEvent: 'click'
 });
 {% endhighlight %}
+
+<br /><br />
 
 <h3>Requirements</h3>
 
@@ -129,7 +142,4 @@ $('select.classToChange').jq_smoothScrollSelect({
 * Brandon Dewitt - suggested this code be pluginized.
 "http://twitter.com/abrandoned":http://www.kylehaskins.com
 
-	<div style="clear:both;"></div><br/>
-	<input type="submit" value="Choose Make" />
-	<br/>
 </form>
