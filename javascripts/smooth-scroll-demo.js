@@ -15,17 +15,16 @@ $(document).ready(function() {
 			return params;
 		}
 	
-		params = getParams();
+		var params = getParams();
 
-		if(params['car_makes']){
-		  params['car_makes'].each(function(index, make){
-        console.log(make)
-  			var selectTag = $('select[name="car_makes[' + index + 1 +']"]');
-  			var selectedOption = selectTag.find('option[value="' + params['car_makes'][index + 1] + '"]');
-  			selectedOption.attr('selected', 'true');
-		  });
-		}
-				
+    $([1,2,3,4,5]).each(function(index, element){
+      if(params['car_make' + element]){
+  			var selectTag = $('select[name="car_make' + element + '"]');
+  			var selectedOption = selectTag.find('option[value="' + params['car_make' + element] + '"]');
+  			selectedOption.attr('selected', 'true');        
+      }      
+    })
+
 	//END DEMO CODE TO ALLOW URL PARAMS WITH ONLY JS
 
   $('select.jq_hoverToScroll').jq_smoothScrollSelect();

@@ -20,7 +20,7 @@ This plugin was created in order to style select tags with extremely large amoun
 
 <h3>Basic hover to scroll example</h3>
 <p>
-	<select name="car_makes[1]" class="jq_hoverToScroll" id="car_select">
+	<select name="car_make1" class="jq_hoverToScroll" id="car_select">
 	  <option value="acura">Acura</option>
 	  <option value="alfaromeo">Alfa Romeo</option>
 	  <option value="audi">Audi</option>
@@ -80,7 +80,7 @@ $('select.jq_hoverToScroll').jq_smoothScrollSelect();
 
 <h3>Change hover scroll speed example</h3>
 <p>
-	<select name="car_makes[2]" class="jq_changeScrollSpeed" id="car_select">
+	<select name="car_make2" class="jq_changeScrollSpeed" id="car_select">
 	  <option value="acura">Acura</option>
 	  <option value="alfaromeo">Alfa Romeo</option>
 	  <option value="audi">Audi</option>
@@ -142,7 +142,7 @@ $('select.jq_changeScrollSpeed').jq_smoothScrollSelect({
 
 <h3>Click to scroll example</h3>
 <div>
-	<select name="car_makes[3]" class="jq_clickToScroll" id="car_select2">
+	<select name="car_make3" class="jq_clickToScroll" id="car_select2">
 	  <option value="acura">Acura</option>
 	  <option value="alfaromeo">Alfa Romeo</option>
 	  <option value="audi">Audi</option>
@@ -205,7 +205,7 @@ $('select.jq_clickToScroll').jq_smoothScrollSelect({
 
 <h3>After open callback example</h3>
 <div>
-	<select name="car_makes[4]" class="jq_afterOpenExample" id="car_select2">
+	<select name="car_make4" class="jq_afterOpenExample" id="car_select2">
 	  <option value="acura">Acura</option>
 	  <option value="alfaromeo">Alfa Romeo</option>
 	  <option value="audi">Audi</option>
@@ -274,7 +274,7 @@ $('select.jq_afterOpenExample').jq_smoothScrollSelect({
 
 <h3>After select callback example</h3>
 <div>
-	<select name="car_makes[5]" class="jq_afterSelectExample" id="car_select2">
+	<select name="car_make5" class="jq_afterSelectExample" id="car_select2">
 	  <option value="acura">Acura</option>
 	  <option value="alfaromeo">Alfa Romeo</option>
 	  <option value="audi">Audi</option>
