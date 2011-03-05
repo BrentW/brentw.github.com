@@ -2,6 +2,7 @@ div.jq_smoothScrollSelectWrap {
   border: 1px solid black;
   width: 100px;
   position:absolute;
+  background-color: white;
 }
 
 div.jq_smoothScrollSelectWrap div {

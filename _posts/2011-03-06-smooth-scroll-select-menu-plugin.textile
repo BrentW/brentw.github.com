@@ -79,7 +79,7 @@ $('select.classToChange').jq_smoothScrollSelect({
 {% endhighlight %}
 
 <h3>Click to scroll example</h3>
-<p>
+
 	<select name="car_make2" class="jq_smoothScrollSelect" id="car_select2">
 	  <option value="acura">Acura</option>
 	  <option value="alfaromeo">Alfa Romeo</option>
@@ -105,7 +105,7 @@ $('select.classToChange').jq_smoothScrollSelect({
 	  <option value="lexus">Lexus</option>
 	  <option value="lincoln">Lincoln</option>
 	</select>
-</p>
+
 {% highlight javascript %}
 $('select.classToChange').jq_smoothScrollSelect({
 	scrollEvent: 'click'
